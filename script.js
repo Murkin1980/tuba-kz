@@ -127,7 +127,7 @@ styleOptions.forEach(option => {
 
 /* 5. Portfolio Category Filter Logic */
 const filterButtons = document.querySelectorAll(".filter-btn");
-const portfolioItems = document.querySelectorAll(".portfolio-item");
+const categoryGroups = document.querySelectorAll(".portfolio-category-group");
 
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
@@ -136,12 +136,12 @@ filterButtons.forEach(button => {
     
     const filterValue = button.dataset.filter;
     
-    portfolioItems.forEach(item => {
-      const category = item.dataset.category;
+    categoryGroups.forEach(group => {
+      const category = group.dataset.category;
       if (filterValue === "all" || category === filterValue) {
-        item.classList.remove("hidden");
+        group.classList.remove("hidden");
       } else {
-        item.classList.add("hidden");
+        group.classList.add("hidden");
       }
     });
   });
