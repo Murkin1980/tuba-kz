@@ -377,12 +377,12 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 32px;
+  gap: 16px;
 }
 
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: 32px;
+  font-size: 24px;
   color: var(--color-on-background);
   transition: color var(--transition-smooth);
 }
