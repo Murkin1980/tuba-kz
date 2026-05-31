@@ -220,6 +220,14 @@ li {
   height: 40px;
   width: auto;
   border-radius: var(--border-radius-sm);
+  background: #ffffff;
+  padding: 4px;
+  object-fit: contain;
+}
+
+.footer-col .brand-logo {
+  height: 48px;
+  margin-bottom: 12px;
 }
 .brand-name {
   font-family: var(--font-display);
