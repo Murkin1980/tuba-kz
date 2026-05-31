@@ -157,11 +157,9 @@ portfolioItems.forEach(item => {
   item.addEventListener("click", () => {
     const src = item.dataset.src;
     const title = item.dataset.title;
-    const detail = item.dataset.detail;
-    
     lightboxImage.src = src;
     lightboxImage.alt = title;
-    lightboxCaption.innerHTML = `<strong>${title}</strong><br><span style="font-size: 14px; opacity:0.8;">${detail}</span>`;
+    lightboxCaption.innerHTML = `<strong>${title}</strong>`;
     
     lightbox.classList.add("is-open");
     document.body.style.overflow = "hidden";
