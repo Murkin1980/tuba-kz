@@ -159,7 +159,7 @@ const lightboxNext = document.getElementById("lightboxNext");
 let currentIndex = 0;
 
 function getAllItems() {
-  return Array.from(document.querySelectorAll(".portfolio-item:not(.hidden)"));
+  return Array.from(document.querySelectorAll(".portfolio-category-group:not(.hidden) .portfolio-item"));
 }
 
 function openLightbox(index) {
@@ -172,6 +172,10 @@ function openLightbox(index) {
   lightboxImage.src = src;
   lightboxImage.alt = title;
   lightboxCaption.innerHTML = `<strong>${title}</strong>`;
+  const counterEl = document.getElementById("lightboxCounter");
+  if (counterEl) {
+    counterEl.textContent = `${currentIndex + 1} из ${items.length}`;
+  }
   lightbox.classList.add("is-open");
   document.body.style.overflow = "hidden";
 }
@@ -570,9 +574,9 @@ function handleChatPhoneSubmit() {
 ----------------------------------------
 • Тип мебели: ${chatStepState.type}
 • Стиль мебели: ${chatStepState.style}
-• Текущая стадия: ${chatStepState.stage}
+• Стадия проекта: ${chatStepState.stage}
 • Телефон: ${phone}
-• Запрос: расчет стоимости и консультация.`;
+• Вопрос клиента: расчет стоимости и консультация.`;
 
   setTimeout(() => {
     addMessage("Спасибо! Открываю WhatsApp с вашей заявкой. Нажмите кнопку 'Отправить' в приложении.", "bot");
@@ -620,7 +624,7 @@ function handleChatTextSubmit() {
       // Fallback: show phone input step
       chatStepState.type = "Индивидуальный вопрос";
       chatStepState.style = "Не указан";
-      chatStepState.stage = "Вопрос в чате: " + text;
+      chatStepState.stage = text;
       showChatPhoneWidget();
     }
   }, 300);
