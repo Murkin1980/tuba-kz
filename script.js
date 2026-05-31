@@ -128,6 +128,7 @@ styleOptions.forEach(option => {
 /* 5. Portfolio Category Filter Logic */
 const filterButtons = document.querySelectorAll(".filter-btn");
 const categoryGroups = document.querySelectorAll(".portfolio-category-group");
+const portfolioItems = document.querySelectorAll(".portfolio-item");
 
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {

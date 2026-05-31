@@ -1,13 +1,7 @@
 /* Design System for tuba.kz */
 
 /* Custom Font Pairings */
-@font-face {
-  font-family: 'Vintage Mintage';
-  src: url('assets/fonts/VintageMintage-FreeDemo.otf') format('opentype');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 :root {
   /* HSL Color System */
@@ -32,8 +26,8 @@
   --color-warm-grey: hsl(var(--hue-wood), 15%, 92%);
   --color-error: hsl(0, 75%, 50%);
   
-  --font-display: 'Vintage Mintage', serif;
-  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Newsreader', serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
   
   --border-radius-sm: 4px;
   --border-radius-md: 8px;
@@ -226,14 +220,6 @@ li {
   height: 40px;
   width: auto;
   border-radius: var(--border-radius-sm);
-  background: #ffffff;
-  padding: 4px;
-  object-fit: contain;
-}
-
-.footer-col .brand-logo {
-  height: 48px;
-  margin-bottom: 12px;
 }
 .brand-name {
   font-family: var(--font-display);
@@ -377,12 +363,12 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 32px;
 }
 
 .mobile-nav-link {
   font-family: var(--font-display);
-  font-size: 24px;
+  font-size: 32px;
   color: var(--color-on-background);
   transition: color var(--transition-smooth);
 }
@@ -487,7 +473,7 @@ li {
 }
 
 .prop-number {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 40px;
   font-weight: 200;
   color: var(--color-wood-accent);
@@ -712,7 +698,7 @@ li {
 }
 
 .service-card-number {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 28px;
   font-weight: 200;
   color: var(--color-outline);
@@ -879,6 +865,23 @@ li {
   display: none;
 }
 
+/* Lightbox Modal */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background-color: rgba(10, 10, 10, 0.95);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-smooth);
+  padding: 40px;
+}
+
 /* Portfolio Category Groups */
 .portfolio-category-group.hidden {
   display: none;
@@ -903,23 +906,6 @@ li {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 8px;
-}
-
-/* Lightbox Modal */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background-color: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(10px);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity var(--transition-smooth);
-  padding: 40px;
 }
 
 .lightbox.is-open {
@@ -988,7 +974,7 @@ li {
 }
 
 .process-step-num {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: 32px;
   font-weight: 200;
   color: var(--color-outline);
@@ -1573,29 +1559,6 @@ li {
 }
 .chat-input-text-row button:hover {
   background-color: var(--color-outline-variant);
-}
-
-/* Logo Watermark Background */
-.section-logo-watermark {
-  position: relative;
-  overflow: hidden;
-}
-.section-logo-watermark::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: url('assets/tuba-logo.jpg') no-repeat center / contain;
-  opacity: 0.04;
-  pointer-events: none;
-  z-index: 0;
-}
-.section-logo-watermark.dark::after {
-  filter: invert(1);
-  opacity: 0.06;
-}
-.section-logo-watermark > * {
-  position: relative;
-  z-index: 1;
 }
 
 /* Animations */
