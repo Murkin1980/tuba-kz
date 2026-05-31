@@ -1,0 +1,1105 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TUBA - мебель на заказ в Алматы</title>
+    <meta name="description" content="TUBA проектирует и изготавливает премиальные кухни, шкафы, гардеробные и корпусную мебель на заказ в Алматы. Замер, проект, производство и монтаж.">
+    <meta name="theme-color" content="#fbf9f9" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#171717" media="(prefers-color-scheme: dark)">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300;400;500;600&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #fbf9f9;
+        --surface: #ffffff;
+        --surface-soft: #f1efed;
+        --surface-mid: #e5e1dc;
+        --text: #191817;
+        --muted: #56524c;
+        --line: #cbc5bd;
+        --accent: #9f772f;
+        --accent-strong: #775a19;
+        --ink: #101010;
+        --white: #ffffff;
+        --shadow: 0 22px 70px rgba(25, 24, 23, .08);
+        --max: 1440px;
+        --pad: clamp(20px, 5.6vw, 80px);
+        --serif: "Newsreader", Georgia, serif;
+        --sans: "Work Sans", "Segoe UI", sans-serif;
+      }
+
+      [data-theme="dark"] {
+        color-scheme: dark;
+        --bg: #171717;
+        --surface: #20201f;
+        --surface-soft: #292827;
+        --surface-mid: #393734;
+        --text: #f5f0e8;
+        --muted: #c8c0b6;
+        --line: #48443f;
+        --accent: #c49b52;
+        --accent-strong: #e0bd73;
+        --ink: #f7f1e8;
+        --white: #171717;
+        --shadow: 0 24px 80px rgba(0, 0, 0, .28);
+      }
+
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--sans);
+        font-size: 16px;
+        line-height: 1.55;
+      }
+
+      body.menu-open { overflow: hidden; }
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      button, input, select { font: inherit; }
+      section { scroll-margin-top: 96px; }
+
+      .skip-link {
+        position: fixed;
+        left: 16px;
+        top: -60px;
+        z-index: 1000;
+        background: var(--ink);
+        color: var(--white);
+        padding: 12px 16px;
+      }
+      .skip-link:focus { top: 16px; }
+
+      .site-header {
+        position: fixed;
+        inset: 0 0 auto;
+        z-index: 100;
+        border-bottom: 1px solid transparent;
+        transition: background .25s ease, border-color .25s ease, box-shadow .25s ease;
+      }
+      .site-header:not(.is-scrolled) {
+        color: #ffffff;
+      }
+      .site-header.is-scrolled {
+        background: color-mix(in srgb, var(--bg) 86%, transparent);
+        color: var(--text);
+        border-color: color-mix(in srgb, var(--line) 72%, transparent);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+      .nav-shell {
+        max-width: var(--max);
+        height: 80px;
+        margin: 0 auto;
+        padding: 0 var(--pad);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .brand {
+        display: inline-flex;
+        min-height: 44px;
+        align-items: center;
+        gap: 12px;
+        font-family: var(--serif);
+        font-size: 31px;
+        font-weight: 500;
+      }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border: 1px solid currentColor;
+        font-family: var(--sans);
+        font-size: 11px;
+        font-weight: 700;
+      }
+      .desktop-nav {
+        display: flex;
+        align-items: center;
+        gap: clamp(16px, 2vw, 30px);
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .desktop-nav a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .desktop-nav a:hover { color: var(--accent); }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .icon-btn, .menu-btn {
+        width: 44px;
+        height: 44px;
+        border: 1px solid var(--line);
+        background: color-mix(in srgb, var(--surface) 78%, transparent);
+        color: var(--text);
+        cursor: pointer;
+      }
+      .site-header:not(.is-scrolled) .icon-btn,
+      .site-header:not(.is-scrolled) .menu-btn {
+        border-color: rgba(255,255,255,.38);
+        background: rgba(255,255,255,.9);
+        color: #161616;
+      }
+      .menu-btn { display: none; }
+      .btn {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        border: 1px solid var(--ink);
+        padding: 13px 22px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        transition: transform .2s ease, background .2s ease, color .2s ease, border-color .2s ease;
+      }
+      .btn:hover { transform: translateY(-1px); }
+      .btn-primary {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #ffffff;
+      }
+      .btn-primary:hover {
+        background: var(--accent-strong);
+        border-color: var(--accent-strong);
+      }
+      .btn-dark {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .btn-light {
+        border-color: rgba(255,255,255,.72);
+        color: #ffffff;
+      }
+      .btn-light:hover {
+        background: #ffffff;
+        color: #151515;
+      }
+
+      .mobile-panel {
+        position: fixed;
+        inset: 80px 0 0;
+        z-index: 90;
+        display: none;
+        padding: 28px var(--pad);
+        background: var(--bg);
+        border-top: 1px solid var(--line);
+      }
+      .mobile-panel.is-open { display: block; }
+      .mobile-panel nav {
+        display: grid;
+        gap: 10px;
+      }
+      .mobile-panel a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid var(--line);
+        font-family: var(--serif);
+        font-size: 28px;
+      }
+
+      .hero {
+        min-height: 100vh;
+        position: relative;
+        display: grid;
+        align-items: end;
+        overflow: hidden;
+        background: #151515;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(90deg, rgba(10,10,10,.78), rgba(10,10,10,.28) 52%, rgba(10,10,10,.18)),
+          linear-gradient(0deg, rgba(10,10,10,.44), rgba(10,10,10,0) 45%),
+          url("https://lh3.googleusercontent.com/aida-public/AB6AXuBCodTJ8CTQL-2UmtzvBnVuTHiZ5s-i2Rz_ukt8IwSsbny7SaPADrp-cevBCxNfahvqHdNlgF6TlSx8ZdTISXGtkyPoa8jmhDTP0l007K8uYNdu9j_EFr1XvXNJiveRjz590CAhsg-BAMXNRVoJnP3CEzmB8paUii5LVfpNCLaxi1uRNnDMkGWSWsTtqeNKl3BYRQpc_7xwmfxx18V1uyqk8VL4iFZCqf4N8bFYuZdZ8QLyRa0DSDznGRfD0K1UMTDGFrwKG5ishJfZ") center/cover;
+        transform: scale(1.02);
+      }
+      .hero-inner {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 136px var(--pad) 54px;
+      }
+      .eyebrow {
+        color: var(--accent-strong);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .hero .eyebrow { color: #e8c57f; }
+      h1, h2, h3 {
+        margin: 0;
+        font-family: var(--serif);
+        font-weight: 400;
+        line-height: .98;
+        letter-spacing: 0;
+      }
+      h1 {
+        max-width: 1040px;
+        margin-top: 22px;
+        color: #ffffff;
+        font-size: clamp(46px, 8.3vw, 118px);
+      }
+      .hero-copy {
+        max-width: 690px;
+        margin: 26px 0 0;
+        color: rgba(255,255,255,.82);
+        font-size: clamp(17px, 1.7vw, 22px);
+      }
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        margin-top: 38px;
+      }
+      .hero-meta {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1px;
+        max-width: 940px;
+        margin-top: 72px;
+        border: 1px solid rgba(255,255,255,.24);
+        background: rgba(255,255,255,.2);
+      }
+      .hero-meta div {
+        padding: 20px;
+        background: rgba(12,12,12,.38);
+        color: rgba(255,255,255,.8);
+        backdrop-filter: blur(10px);
+      }
+      .hero-meta strong {
+        display: block;
+        color: #ffffff;
+        font-family: var(--serif);
+        font-size: 30px;
+        font-weight: 400;
+      }
+
+      .section {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: clamp(78px, 10vw, 132px) var(--pad);
+      }
+      .section-tight { padding-top: clamp(44px, 7vw, 88px); }
+      .split {
+        display: grid;
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: clamp(34px, 6vw, 92px);
+        align-items: start;
+      }
+      .section h2 {
+        font-size: clamp(38px, 5vw, 74px);
+      }
+      .lead {
+        margin: 18px 0 0;
+        color: var(--muted);
+        font-size: clamp(17px, 1.55vw, 21px);
+      }
+      .rule-list {
+        border-top: 1px solid var(--line);
+      }
+      .rule-list li {
+        display: grid;
+        grid-template-columns: 150px 1fr;
+        gap: 24px;
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+        list-style: none;
+      }
+      .rule-list strong {
+        color: var(--text);
+        font-size: 13px;
+        text-transform: uppercase;
+      }
+      .rule-list span { color: var(--muted); }
+
+      .category-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-top: 48px;
+      }
+      .category-card {
+        position: relative;
+        min-height: 460px;
+        overflow: hidden;
+        background: var(--surface-soft);
+      }
+      .category-card:nth-child(even) { margin-top: 42px; }
+      .category-card img,
+      .project-card img,
+      .case-visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .category-card img {
+        position: absolute;
+        inset: 0;
+        transition: transform .7s ease;
+      }
+      .category-card:hover img { transform: scale(1.045); }
+      .category-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(0deg, rgba(0,0,0,.72), rgba(0,0,0,.04) 64%);
+      }
+      .category-body {
+        position: absolute;
+        inset: auto 0 0;
+        z-index: 1;
+        padding: 26px;
+        color: #ffffff;
+      }
+      .category-body h3 {
+        font-size: 34px;
+        margin-bottom: 10px;
+      }
+      .category-body p {
+        margin: 0;
+        color: rgba(255,255,255,.78);
+      }
+
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 24px;
+        margin-top: 54px;
+      }
+      .project-card {
+        grid-column: span 6;
+      }
+      .project-card.featured {
+        grid-column: span 8;
+      }
+      .project-card.offset {
+        grid-column: 8 / span 5;
+        margin-top: 92px;
+      }
+      .project-img {
+        overflow: hidden;
+        aspect-ratio: 16 / 10;
+        background: var(--surface-soft);
+      }
+      .project-card.offset .project-img { aspect-ratio: 4 / 5; }
+      .project-card img {
+        transition: transform .7s ease;
+      }
+      .project-card:hover img { transform: scale(1.035); }
+      .project-info {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 20px;
+        padding: 22px 0 0;
+      }
+      .project-info h3 {
+        font-size: clamp(28px, 3vw, 43px);
+      }
+      .project-info p {
+        margin: 7px 0 0;
+        color: var(--muted);
+      }
+      .tag-stack {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+      }
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 5px 10px;
+        background: var(--surface-soft);
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+
+      .case-study {
+        background: var(--surface-soft);
+      }
+      .case-shell {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: clamp(78px, 10vw, 132px) var(--pad);
+        display: grid;
+        grid-template-columns: .78fr 1.22fr;
+        gap: clamp(34px, 5vw, 76px);
+      }
+      .case-panel {
+        position: sticky;
+        top: 112px;
+        align-self: start;
+      }
+      .case-panel h2 { font-size: clamp(42px, 5.2vw, 82px); }
+      .case-facts {
+        display: grid;
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .case-facts div {
+        display: grid;
+        grid-template-columns: 112px 1fr;
+        gap: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
+      }
+      .case-facts span:first-child {
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .case-visual {
+        min-height: 680px;
+        overflow: hidden;
+        background: var(--surface-mid);
+      }
+      .case-copy {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+        margin-top: 30px;
+      }
+      .case-copy h3 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .case-copy p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .process {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1px;
+        margin-top: 50px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .process article {
+        min-height: 230px;
+        padding: 24px;
+        background: var(--bg);
+      }
+      .process b {
+        display: block;
+        color: var(--accent);
+        font-family: var(--serif);
+        font-size: 46px;
+        font-weight: 300;
+      }
+      .process h3 {
+        margin-top: 34px;
+        font-size: 25px;
+        line-height: 1.08;
+      }
+      .process p {
+        margin: 12px 0 0;
+        color: var(--muted);
+      }
+
+      .materials {
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: 48px;
+        margin-top: 48px;
+      }
+      .material-board {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+      .swatch {
+        min-height: 168px;
+        padding: 18px;
+        display: flex;
+        align-items: flex-end;
+        background:
+          linear-gradient(135deg, rgba(255,255,255,.26), transparent),
+          var(--surface-soft);
+        border: 1px solid var(--line);
+        color: var(--text);
+        font-weight: 700;
+      }
+      .swatch.oak { background-color: #b78b55; color: #fff; }
+      .swatch.mdf { background-color: #353431; color: #fff; }
+      .swatch.stone { background-color: #d8d2c8; }
+      .swatch.glass { background-color: #9ba6a6; color: #fff; }
+      .partner-strip {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 26px;
+        background: var(--line);
+      }
+      .partner-strip span {
+        min-height: 76px;
+        display: grid;
+        place-items: center;
+        background: var(--surface);
+        font-family: var(--serif);
+        font-size: 27px;
+      }
+
+      .trust {
+        display: grid;
+        grid-template-columns: .8fr 1.2fr;
+        gap: clamp(32px, 6vw, 88px);
+        align-items: start;
+      }
+      .trust-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--line);
+        border: 1px solid var(--line);
+      }
+      .trust-list div {
+        min-height: 154px;
+        padding: 24px;
+        background: var(--surface);
+      }
+      .trust-list strong {
+        display: block;
+        margin-bottom: 10px;
+        font-family: var(--serif);
+        font-size: 28px;
+        font-weight: 400;
+      }
+      .trust-list p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact-band {
+        background: var(--ink);
+        color: var(--white);
+      }
+      .contact-shell {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: clamp(72px, 9vw, 118px) var(--pad);
+        display: grid;
+        grid-template-columns: .9fr 1.1fr;
+        gap: clamp(34px, 6vw, 88px);
+      }
+      .contact-shell h2 {
+        color: var(--white);
+        font-size: clamp(42px, 5.2vw, 82px);
+      }
+      .contact-shell p { color: color-mix(in srgb, var(--white) 76%, transparent); }
+      .contact-links {
+        display: grid;
+        gap: 12px;
+        margin-top: 34px;
+      }
+      .contact-links a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        color: var(--white);
+        border-bottom: 1px solid color-mix(in srgb, var(--white) 24%, transparent);
+      }
+      .lead-form {
+        display: grid;
+        gap: 18px;
+        padding: clamp(24px, 3vw, 42px);
+        background: color-mix(in srgb, var(--white) 7%, transparent);
+        border: 1px solid color-mix(in srgb, var(--white) 20%, transparent);
+      }
+      .field label {
+        display: block;
+        margin-bottom: 7px;
+        color: color-mix(in srgb, var(--white) 72%, transparent);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .field input, .field select {
+        width: 100%;
+        min-height: 52px;
+        border: 0;
+        border-bottom: 1px solid color-mix(in srgb, var(--white) 38%, transparent);
+        border-radius: 0;
+        background: transparent;
+        color: var(--white);
+        outline: none;
+      }
+      .field select option {
+        background: #191817;
+        color: #ffffff;
+      }
+      .field input:focus, .field select:focus { border-color: var(--accent-strong); }
+      .form-note {
+        margin: 0;
+        color: color-mix(in srgb, var(--white) 62%, transparent);
+        font-size: 13px;
+      }
+
+      .site-footer {
+        max-width: var(--max);
+        margin: 0 auto;
+        padding: 38px var(--pad) 92px;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 26px;
+        color: var(--muted);
+        font-size: 14px;
+      }
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      .floating-wa {
+        position: fixed;
+        right: 22px;
+        bottom: 22px;
+        z-index: 80;
+        width: 58px;
+        height: 58px;
+        display: grid;
+        place-items: center;
+        border-radius: 999px;
+        background: #25d366;
+        color: #ffffff;
+        box-shadow: 0 14px 38px rgba(0,0,0,.18);
+        font-weight: 800;
+      }
+      .mobile-cta {
+        display: none;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 75;
+        padding: 10px 14px;
+        background: color-mix(in srgb, var(--bg) 88%, transparent);
+        border-top: 1px solid var(--line);
+        backdrop-filter: blur(14px);
+      }
+      .mobile-cta .btn { width: 100%; }
+
+      @media (max-width: 1120px) {
+        .desktop-nav { display: none; }
+        .menu-btn { display: inline-grid; place-items: center; }
+        .category-grid { grid-template-columns: repeat(2, 1fr); }
+        .process { grid-template-columns: repeat(2, 1fr); }
+        .process article:last-child { grid-column: span 2; }
+      }
+
+      @media (max-width: 780px) {
+        .nav-shell { height: 72px; }
+        .site-header .btn-primary { display: none; }
+        .brand { font-size: 27px; }
+        .hero-inner { padding-top: 112px; padding-bottom: 32px; }
+        .hero-meta { grid-template-columns: 1fr; margin-top: 48px; }
+        .split, .case-shell, .materials, .trust, .contact-shell, .case-copy {
+          grid-template-columns: 1fr;
+        }
+        .rule-list li { grid-template-columns: 1fr; gap: 6px; }
+        .category-grid { grid-template-columns: 1fr; }
+        .category-card, .category-card:nth-child(even) {
+          min-height: 390px;
+          margin-top: 0;
+        }
+        .portfolio-grid { display: block; }
+        .project-card, .project-card.featured, .project-card.offset {
+          margin: 0 0 44px;
+        }
+        .project-info { grid-template-columns: 1fr; }
+        .tag-stack { justify-content: flex-start; }
+        .case-panel { position: static; }
+        .case-visual { min-height: 420px; }
+        .process { grid-template-columns: 1fr; }
+        .process article:last-child { grid-column: auto; }
+        .trust-list { grid-template-columns: 1fr; }
+        .material-board { grid-template-columns: 1fr; }
+        .partner-strip { grid-template-columns: 1fr; }
+        .site-footer { grid-template-columns: 1fr; padding-bottom: 116px; }
+        .floating-wa { bottom: 82px; }
+        .mobile-cta { display: block; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+          scroll-behavior: auto !important;
+          transition: none !important;
+          animation: none !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+
+    <header class="site-header" id="siteHeader">
+      <div class="nav-shell">
+        <a class="brand" href="#home" aria-label="TUBA, главная">
+          <span class="brand-mark" aria-hidden="true">TB</span>
+          <span>TUBA</span>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Основная навигация">
+          <a href="#kitchens">Кухни</a>
+          <a href="#wardrobes">Шкафы</a>
+          <a href="#portfolio">Проекты</a>
+          <a href="#materials">Материалы</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+
+        <div class="header-actions">
+          <button class="icon-btn" type="button" id="themeToggle" aria-label="Переключить светлую и тёмную тему">◐</button>
+          <a class="btn btn-primary" href="#lead">Получить расчёт</a>
+          <button class="menu-btn" type="button" id="menuToggle" aria-expanded="false" aria-controls="mobilePanel" aria-label="Открыть меню">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <div class="mobile-panel" id="mobilePanel">
+      <nav aria-label="Мобильная навигация">
+        <a href="#kitchens">Кухни</a>
+        <a href="#wardrobes">Шкафы и хранение</a>
+        <a href="#portfolio">Портфолио</a>
+        <a href="#case">Кейс Esentai City</a>
+        <a href="#materials">Материалы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+
+    <main id="main">
+      <section class="hero" id="home" aria-label="TUBA мебель на заказ">
+        <div class="hero-inner">
+          <div class="eyebrow">Мебель на заказ в Алматы</div>
+          <h1>Проектируем кухни, шкафы и корпусную мебель под ваш интерьер</h1>
+          <p class="hero-copy">TUBA соединяет архитектурную точность, премиальные материалы и индивидуальное производство. Берём проект от замера до монтажа, чтобы мебель выглядела частью пространства, а не отдельной покупкой.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lead">Получить расчёт</a>
+            <a class="btn btn-light" href="#portfolio">Смотреть проекты</a>
+          </div>
+          <div class="hero-meta" aria-label="Ключевые преимущества">
+            <div><strong>01</strong> Замер, проект и смета до запуска в производство</div>
+            <div><strong>02</strong> Фурнитура Blum, Hettich, Egger и аналоги под задачу</div>
+            <div><strong>03</strong> Кухни, гардеробные, шкафы и системы хранения</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-tight" aria-labelledby="trustIntroTitle">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Подход студии</div>
+            <h2 id="trustIntroTitle">Работаем от замера до чистого монтажа</h2>
+          </div>
+          <ul class="rule-list">
+            <li><strong>Точность</strong><span>Снимаем размеры, проверяем ниши, коммуникации, открывания фасадов и бытовую технику.</span></li>
+            <li><strong>Материалы</strong><span>Подбираем фасады, столешницы и механизмы под стиль интерьера, бюджет и нагрузку.</span></li>
+            <li><strong>Контроль</strong><span>Передаём понятную смету, согласуем чертежи и сопровождаем проект до финальной установки.</span></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="kitchens" aria-labelledby="categoriesTitle">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Категории</div>
+            <h2 id="categoriesTitle">Индивидуальные решения для каждой зоны дома</h2>
+          </div>
+          <p class="lead">Мы делаем мебель под реальные размеры помещения: от кухни с островом до системы хранения в прихожей, где каждый миллиметр работает на удобство.</p>
+        </div>
+
+        <div class="category-grid">
+          <a class="category-card" href="#lead">
+            <img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA97mY9RldkhSSWAbiuIZUse9I_r08871YAY6sitslznq2GrehsA7EJpCVQuQvI6VHrxGiDCSIqxW7XdNwo4w21AGu6BQ3_Ds3hP3bXOC75wpV_n4PQwE8RxDXfg_TtCjX7ONeJGq6TEFCy2GIcEf338UUoTYruYQwH__4EKlNeYB7xOHTM5HP7BUmW3WyHsTeIE77BIYBHFWwYkybhBH_-GjlppHhbpyTxjBj5yKwPzACgYaK5oenNdfEYwhqXISKVToyid2mWX2Py" alt="Светлая кухня на заказ с дубовыми поверхностями и встроенными шкафами">
+            <div class="category-body"><h3>Кухни</h3><p>Острова, пеналы, встроенная техника и хранение до потолка.</p></div>
+          </a>
+          <a class="category-card" id="wardrobes" href="#lead">
+            <img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDcq1iHASX6i5htAb8Txhn_GY0DLu2pm2GLR-N_iTdfejh48rsQHt8Ejz_Gc0NHXoqgx7EKaA0gFa0Z5XckCt2gzK6CCruW6XcWNF0SEQQp738sojtToMEJzSOuLNGO7wPpBknFSgYZVvfAb3E1ArAN6pzrcAgKMmKQ9bOCtieOVMOy98DXMFBEEmtqTpNc933sDMlaWToi_ixRteSq6BFjtP49SsjXtVT-IAy4TpxijCZCpi9zqO1POJgMX4KBxZYYK_9NioKwp2PB" alt="Гардеробная с тёплым деревом, стеклянными фасадами и внутренней подсветкой">
+            <div class="category-body"><h3>Гардеробные</h3><p>Открытые и закрытые системы, подсветка, стекло, шпон.</p></div>
+          </a>
+          <a class="category-card" href="#lead">
+            <img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlMYI2Uhdbx_ffuYzQiiHWmtQ3meI3nOTn1bVizpw0E4l4xfk7OU1zw8xBopLyvDVvylHxTFEbZ1F0hYEJwrhG5ovOkU0ATIt6H39lDUVLG03lh_wb5Z4D1Tr3Dol4U4YzqF_GjM3NemDfdKLsKLDGm1oUFy-drPjUa25pZ0-DNu-hM6hcVnbSOoVgXwPUxrw09DcSjAcYurKkEwzGW-wr-peDppqTzts0P8nFZXUVpIxlvcdvs_NKR352mw_BH_U-ZLt4LUXELdLO" alt="Встроенный шкаф из светлого дуба с вертикальными ручками">
+            <div class="category-body"><h3>Шкафы</h3><p>Купе, распашные, встроенные шкафы для спальни и прихожей.</p></div>
+          </a>
+          <a class="category-card" href="#lead">
+            <img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVWFdSkSAGuBBfn_HhJM239sdlNfwK9YSBb2WR74-7KOiaK0-0hHsJ2ZrNNZPrflZ9MHAxqvPQKusfqSeooIOS-MdWO4NA5B3AbgZ_sx2nCP-51mdyGovI6F8_46zOmoSWp81NHeRbueq8P7OzUoGNzxsRTpGvFmX82plTEG7q1Q2rWUrPGRTeTU7SnNzu581gH3df60h0lsKTJVpHZQO-nXWlvri6bnd0O2O5lOUGe-qfARZqamL2XXiM6kK1gauYXeXjjVdEFYn6" alt="Матовое тёмное хранение в гостиной с открытыми полками">
+            <div class="category-body"><h3>ТВ-зоны</h3><p>Стеновые панели, тумбы, стеллажи и скрытая электрика.</p></div>
+          </a>
+        </div>
+      </section>
+
+      <section class="section" id="portfolio" aria-labelledby="portfolioTitle">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Портфолио</div>
+            <h2 id="portfolioTitle">Реализованные проекты</h2>
+          </div>
+          <p class="lead">Показываем проекты как кейсы: задача, материалы, конструктив и результат. Такой формат помогает быстрее понять, что подойдёт вашему интерьеру.</p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="project-card featured">
+            <div class="project-img"><img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEgXjl8FQ8_XOgdcKeuBvU2iJneankZtmS-Geu9xjG17BThuoskX852VtPrggvzHGPelQ5UXDlu5nAkA7sX7aiuz6LVeNckwtnXBcsNchGKKWGH1cEpFyFIkWWMxHntnpFFBQH4sevBHT3dzlhC3KDmEpVbLJITYrFWVxXzBgVKpFHnQ3yM0YFTNH2lotIZ6-lTHAVI42AU60qQpBuoo30yh2cNkA9dS97FA0NbA7lVi3mdG3mdOKkwRQkfKR-Pku79fQMcfrsODBQ" alt="Премиальная кухня с ореховыми фасадами и тёмным каменным островом"></div>
+            <div class="project-info">
+              <div><h3>Esentai City Residence</h3><p>Кухня и хранение, Алматы, 2024</p></div>
+              <div class="tag-stack"><span class="tag">Орех</span><span class="tag">Камень</span><span class="tag">Blum</span></div>
+            </div>
+          </article>
+
+          <article class="project-card offset">
+            <div class="project-img"><img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCga6-b1mLUpe02YyXtvLD5-HPYp0E1acdZ8JYxqNIYw1rzGcmr964dsq-57gmpRAHFDTnixtyDvPtLVEAq0ajRuw9TjGpaSoh3exqp796B3E3JJSFlldXEakYoO8e4iB6FJxUeWLFDBLETO00cLSK3FgMlLZgWoCh3mZzKVCrAbNS3cc_D2GG-hR5K1-DhNUk1W5YnoQD1oI0M9u-_BUFmSlaSYWlXXmh1VNfcG8Tz0UPvWbOaFWxQajbFI5sL5hgyfn5EmhbJ6I-x" alt="Столовая зона с деревянным столом и мягким естественным светом"></div>
+            <div class="project-info">
+              <div><h3>Zen Dining</h3><p>Стол и стеновое хранение, Алматы, 2023</p></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-img"><img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnagfbaPXzJCcgNbz7cO-2qRCcy82MA6rcKpdn2ALDdfwa1hiJpmsYT6jFCO-14Eo_gZvl2W-0sQnBQUpBIRV7Iub_Z97mf-yblKc-gsOOtebBzDYKf5lAW7Y8oFzTBY8WGFmYivxeplfKLjGiLJcHO7PV5szjYrtYQG47ay_RCsuF1FxM9_yd1ych6QqsM6mojU3SwqYVDC2qOFBsKHlLbcvKI7HcNXxqKhq-F7k5DlMn2J0mfXIp4xr6JHIJo65fsRQu4e11_KUg" alt="Светлая гардеробная с открытыми полками и выдвижными ящиками"></div>
+            <div class="project-info">
+              <div><h3>Pure Oak Wardrobe</h3><p>Гардеробная, Алматы, 2024</p></div>
+              <div class="tag-stack"><span class="tag">Дуб</span><span class="tag">LED</span></div>
+            </div>
+          </article>
+
+          <article class="project-card">
+            <div class="project-img"><img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXGefbfE0IFIRyFMlBe9JAb5dbSNQ3CYug7WgndPR2Gogopqs_bO3uT2RoXuEKsGxWAf4ShCZ3mPU8bFb_cdJTTEqbuUKT9VHeZivyi8yHEU_H9iwY4bTVTPTfI8w_khvV4_ngbca2n4b5HhqY6thXuMYGI9b4ZVHbSteAUJ4oqPqHgQWodkNUvEb80YWVSFQ8ZSUBam1oN7zM2m79duEQSDp6CQOTedQmHshzWcqY-CY-MdZ6FgdwGtyWtc5cXmSjgKadyyHASyoZ" alt="Тёмная мебельная композиция в гостиной с камнем и деревянными элементами"></div>
+            <div class="project-info">
+              <div><h3>Anthracite Line</h3><p>ТВ-зона и стеллаж, Алматы, 2023</p></div>
+              <div class="tag-stack"><span class="tag">МДФ</span><span class="tag">Шпон</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="case-study" id="case" aria-labelledby="caseTitle">
+        <div class="case-shell">
+          <div class="case-panel">
+            <div class="eyebrow">Project detail</div>
+            <h2 id="caseTitle">Esentai City Residence</h2>
+            <p class="lead">Кухня и система хранения для квартиры с открытой гостиной. Главная задача - встроить крупный функциональный объём так, чтобы он выглядел архитектурно лёгким.</p>
+            <div class="case-facts">
+              <div><span>Локация</span><span>Алматы, Esentai City</span></div>
+              <div><span>Материалы</span><span>Шпон ореха, камень, матовая эмаль</span></div>
+              <div><span>Фурнитура</span><span>Blum, скрытые направляющие, доводчики</span></div>
+              <div><span>Срок</span><span>Проектирование, производство и монтаж</span></div>
+            </div>
+          </div>
+          <div>
+            <div class="case-visual"><img loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAvasTHZL2XDC584xiqwjCGlYs5XrwMri3G5RSE40eM4Y3WQlCN2kS3HR3FR93S4F3zaem6ObueIutAzSg_wNm5dSbvAkXL5s0OclD7sX4YAxQ0r-NQHWwfLmvdFuGKhXGIbEOhVgGJOJwrwyE7xCEsNVmQKqiC2l_iq2RrGtMrnmdUGHx-FKyvFQYkzMxDsFRmgHHsWqQE_jDRb3Es8igtt6kpi-IhOZKJ0F_Iysmjde5qv58O9euu7y15HpsDd9lhctwanCjGZNzE" alt="Крупный интерьерный кадр кухни Esentai City Residence с деревянными фасадами"></div>
+            <div class="case-copy">
+              <article><h3>Задача</h3><p>Спрятать технику, увеличить хранение и сохранить чистую линию гостиной без визуального шума.</p></article>
+              <article><h3>Решение</h3><p>Собрали высокие пеналы, остров с каменной столешницей и систему открываний без лишней фурнитуры на фасадах.</p></article>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="processTitle">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Процесс</div>
+            <h2 id="processTitle">Пять шагов без лишней неопределённости</h2>
+          </div>
+          <p class="lead">Клиенту важно понимать, когда появляется смета, где фиксируются материалы и кто отвечает за монтаж. Поэтому процесс короткий, прозрачный и проверяемый.</p>
+        </div>
+        <div class="process">
+          <article><b>01</b><h3>Заявка</h3><p>Уточняем тип мебели, размеры, стиль и желаемые материалы.</p></article>
+          <article><b>02</b><h3>Замер</h3><p>Выезжаем на объект и проверяем все технические ограничения.</p></article>
+          <article><b>03</b><h3>Проект</h3><p>Готовим компоновку, чертежи, подбор фасадов и фурнитуры.</p></article>
+          <article><b>04</b><h3>Производство</h3><p>Изготавливаем мебель после согласования сметы и спецификации.</p></article>
+          <article><b>05</b><h3>Монтаж</h3><p>Доставляем, устанавливаем и проверяем работу всех механизмов.</p></article>
+        </div>
+      </section>
+
+      <section class="section" id="materials" aria-labelledby="materialsTitle">
+        <div class="split">
+          <div>
+            <div class="eyebrow">Материалы и фурнитура</div>
+            <h2 id="materialsTitle">Фактуры, которые выдерживают ежедневную жизнь</h2>
+          </div>
+          <p class="lead">Подбираем материалы не только по визуалу, но и по сценарию использования: влажность, нагрузка, уборка, детские зоны, интенсивность открываний.</p>
+        </div>
+        <div class="materials">
+          <div class="material-board" aria-label="Примеры материалов">
+            <div class="swatch oak">Шпон и массив</div>
+            <div class="swatch mdf">МДФ эмаль</div>
+            <div class="swatch stone">Камень и HPL</div>
+            <div class="swatch glass">Стекло и металл</div>
+          </div>
+          <div>
+            <ul class="rule-list">
+              <li><strong>Фасады</strong><span>ЛДСП, МДФ, шпон, пластик, стекло, профильные системы.</span></li>
+              <li><strong>Механизмы</strong><span>Петли, направляющие, подъёмники, доводчики и скрытые системы хранения.</span></li>
+              <li><strong>Поверхности</strong><span>Столешницы из камня, компакт-плиты, HPL и влагостойких материалов.</span></li>
+            </ul>
+            <div class="partner-strip" aria-label="Партнёры по материалам и фурнитуре">
+              <span>Blum</span><span>Hettich</span><span>Egger</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" aria-labelledby="whyTitle">
+        <div class="trust">
+          <div>
+            <div class="eyebrow">Почему доверяют</div>
+            <h2 id="whyTitle">Спокойный сервис для сложных проектов</h2>
+            <p class="lead">Мы не продаём типовой шкаф. Мы помогаем собрать решение под планировку, привычки семьи и интерьер, в котором мебель должна жить много лет.</p>
+          </div>
+          <div class="trust-list">
+            <div><strong>Договор</strong><p>Фиксируем состав работ, сроки и комплектацию.</p></div>
+            <div><strong>Смета</strong><p>Показываем, из чего складывается стоимость проекта.</p></div>
+            <div><strong>Ниши</strong><p>Работаем со сложными углами, колоннами и коммуникациями.</p></div>
+            <div><strong>Монтаж</strong><p>Устанавливаем мебель и проверяем зазоры, фасады, механизмы.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact-band" id="contacts" aria-labelledby="contactTitle">
+        <div class="contact-shell" id="lead">
+          <div>
+            <div class="eyebrow">Контакты</div>
+            <h2 id="contactTitle">Нужна мебель под ваш размер и задачу?</h2>
+            <p>Оставьте контакты или напишите в WhatsApp. Можно прислать размеры, план помещения, фото ниши или референсы - подготовим ориентировочный расчёт и предложим следующий шаг.</p>
+            <div class="contact-links">
+              <a href="tel:+77479043494">+7 747 904 34 94</a>
+              <a href="https://wa.me/77479043494?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%2C%20%D1%85%D0%BE%D1%87%D1%83%20%D1%80%D0%B0%D1%81%D1%87%D1%91%D1%82%20%D0%BC%D0%B5%D0%B1%D0%B5%D0%BB%D0%B8%20TUBA" target="_blank" rel="noopener">WhatsApp: написать в TUBA</a>
+              <a href="https://www.instagram.com/tuba_almaty/" target="_blank" rel="noopener">Instagram: @tuba_almaty</a>
+              <span>Алматы, Казахстан</span>
+            </div>
+          </div>
+
+          <form class="lead-form" id="quoteForm" aria-label="Форма заявки на расчёт">
+            <div class="field">
+              <label for="name">Имя</label>
+              <input id="name" name="name" autocomplete="name" required placeholder="Как к вам обращаться">
+            </div>
+            <div class="field">
+              <label for="phone">Телефон или WhatsApp</label>
+              <input id="phone" name="phone" autocomplete="tel" required placeholder="+7 ___ ___ __ __">
+            </div>
+            <div class="field">
+              <label for="projectType">Тип проекта</label>
+              <select id="projectType" name="projectType" required>
+                <option value="">Выберите направление</option>
+                <option>Кухня</option>
+                <option>Шкаф</option>
+                <option>Гардеробная</option>
+                <option>ТВ-зона или корпусная мебель</option>
+                <option>Другое</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" type="submit">Отправить в WhatsApp</button>
+            <p class="form-note">Форма откроет WhatsApp с подготовленным сообщением. Данные не сохраняются на сайте.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand" href="#home"><span class="brand-mark" aria-hidden="true">TB</span><span>TUBA</span></a>
+        <p>Премиальная мебель на заказ: кухни, шкафы, гардеробные и корпусные решения для квартир и домов в Алматы.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Навигация в футере">
+        <a href="#kitchens">Кухни</a>
+        <a href="#wardrobes">Шкафы</a>
+        <a href="#portfolio">Проекты</a>
+        <a href="#materials">Материалы</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </footer>
+
+    <a class="floating-wa" href="https://wa.me/77479043494" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">WA</a>
+    <div class="mobile-cta"><a class="btn btn-primary" href="#lead">Получить расчёт</a></div>
+
+    <script>
+      const header = document.getElementById("siteHeader");
+      const menuToggle = document.getElementById("menuToggle");
+      const mobilePanel = document.getElementById("mobilePanel");
+      const themeToggle = document.getElementById("themeToggle");
+      const quoteForm = document.getElementById("quoteForm");
+
+      const applyTheme = (theme) => {
+        document.documentElement.dataset.theme = theme;
+        localStorage.setItem("tuba-theme", theme);
+      };
+
+      const savedTheme = localStorage.getItem("tuba-theme");
+      if (savedTheme) {
+        applyTheme(savedTheme);
+      } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+        applyTheme("dark");
+      }
+
+      const syncHeader = () => {
+        header.classList.toggle("is-scrolled", window.scrollY > 12);
+      };
+      syncHeader();
+      window.addEventListener("scroll", syncHeader, { passive: true });
+
+      menuToggle.addEventListener("click", () => {
+        const isOpen = mobilePanel.classList.toggle("is-open");
+        document.body.classList.toggle("menu-open", isOpen);
+        menuToggle.setAttribute("aria-expanded", String(isOpen));
+        menuToggle.textContent = isOpen ? "×" : "☰";
+      });
+
+      mobilePanel.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          mobilePanel.classList.remove("is-open");
+          document.body.classList.remove("menu-open");
+          menuToggle.setAttribute("aria-expanded", "false");
+          menuToggle.textContent = "☰";
+        });
+      });
+
+      themeToggle.addEventListener("click", () => {
+        const nextTheme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+        applyTheme(nextTheme);
+      });
+
+      quoteForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+        const data = new FormData(quoteForm);
+        const text = [
+          "Здравствуйте, хочу получить расчёт мебели TUBA.",
+          `Имя: ${data.get("name")}`,
+          `Телефон/WhatsApp: ${data.get("phone")}`,
+          `Тип проекта: ${data.get("projectType")}`
+        ].join("\n");
+        window.open(`https://wa.me/77479043494?text=${encodeURIComponent(text)}`, "_blank", "noopener");
+      });
+    </script>
+  </body>
+</html>
