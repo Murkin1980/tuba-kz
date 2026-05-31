@@ -1543,6 +1543,29 @@ li {
   background-color: var(--color-outline-variant);
 }
 
+/* Logo Watermark Background */
+.section-logo-watermark {
+  position: relative;
+  overflow: hidden;
+}
+.section-logo-watermark::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('assets/tuba-logo.jpg') no-repeat center / contain;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+.section-logo-watermark.dark::after {
+  filter: invert(1);
+  opacity: 0.06;
+}
+.section-logo-watermark > * {
+  position: relative;
+  z-index: 1;
+}
+
 /* Animations */
 .reveal-anim {
   opacity: 0;
