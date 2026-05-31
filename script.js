@@ -148,24 +148,42 @@ filterButtons.forEach(button => {
   });
 });
 
-/* 6. Portfolio Image Lightbox Modal */
+/* 6. Portfolio Image Lightbox Modal with Navigation */
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightboxImage");
 const lightboxCaption = document.getElementById("lightboxCaption");
 const lightboxClose = document.getElementById("lightboxClose");
+const lightboxPrev = document.getElementById("lightboxPrev");
+const lightboxNext = document.getElementById("lightboxNext");
 
-portfolioItems.forEach(item => {
-  item.addEventListener("click", () => {
-    const src = item.dataset.src;
-    const title = item.dataset.title;
-    lightboxImage.src = src;
-    lightboxImage.alt = title;
-    lightboxCaption.innerHTML = `<strong>${title}</strong>`;
-    
-    lightbox.classList.add("is-open");
-    document.body.style.overflow = "hidden";
-  });
-});
+let currentIndex = 0;
+
+function getAllItems() {
+  return Array.from(document.querySelectorAll(".portfolio-item:not(.hidden)"));
+}
+
+function openLightbox(index) {
+  const items = getAllItems();
+  if (!items.length) return;
+  currentIndex = index;
+  const item = items[currentIndex];
+  const src = item.dataset.src;
+  const title = item.dataset.title;
+  lightboxImage.src = src;
+  lightboxImage.alt = title;
+  lightboxCaption.innerHTML = `<strong>${title}</strong>`;
+  lightbox.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+}
+
+function navigateLightbox(direction) {
+  const items = getAllItems();
+  if (!items.length) return;
+  currentIndex += direction;
+  if (currentIndex < 0) currentIndex = items.length - 1;
+  if (currentIndex >= items.length) currentIndex = 0;
+  openLightbox(currentIndex);
+}
 
 function closeLightbox() {
   lightbox.classList.remove("is-open");
@@ -173,11 +191,36 @@ function closeLightbox() {
   lightboxImage.src = "";
 }
 
+portfolioItems.forEach(item => {
+  item.addEventListener("click", () => {
+    const items = getAllItems();
+    const idx = items.indexOf(item);
+    if (idx !== -1) openLightbox(idx);
+  });
+});
+
+lightboxPrev.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navigateLightbox(-1);
+});
+
+lightboxNext.addEventListener("click", (e) => {
+  e.stopPropagation();
+  navigateLightbox(1);
+});
+
 lightboxClose.addEventListener("click", closeLightbox);
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) {
     closeLightbox();
   }
+});
+
+document.addEventListener("keydown", (e) => {
+  if (!lightbox.classList.contains("is-open")) return;
+  if (e.key === "Escape") closeLightbox();
+  if (e.key === "ArrowLeft") navigateLightbox(-1);
+  if (e.key === "ArrowRight") navigateLightbox(1);
 });
 
 /* 7. Kazakhstan Telephone Autocorrector & Auto-masking */
