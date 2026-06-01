@@ -3,7 +3,7 @@
 // Target WhatsApp Configuration
 const WA_NUMBER = "77479043494";
 
-/* 1. Header Scroll Effect */
+/* 1. Header Scroll Effect with passive handler */
 const header = document.getElementById("siteHeader");
 
 function handleHeaderScroll() {
@@ -132,8 +132,12 @@ const portfolioItems = document.querySelectorAll(".portfolio-item");
 
 filterButtons.forEach(button => {
   button.addEventListener("click", () => {
-    filterButtons.forEach(btn => btn.classList.remove("is-active"));
+    filterButtons.forEach(btn => {
+      btn.classList.remove("is-active");
+      btn.setAttribute("aria-pressed", "false");
+    });
     button.classList.add("is-active");
+    button.setAttribute("aria-pressed", "true");
     
     const filterValue = button.dataset.filter;
     
@@ -221,13 +225,15 @@ lightbox.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (!lightbox.classList.contains("is-open")) return;
-  if (e.key === "Escape") closeLightbox();
-  if (e.key === "ArrowLeft") navigateLightbox(-1);
-  if (e.key === "ArrowRight") navigateLightbox(1);
+  if (lightbox.classList.contains("is-open")) {
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowLeft") navigateLightbox(-1);
+    if (e.key === "ArrowRight") navigateLightbox(1);
+  }
+  if (e.key === "Escape" && chatWidget.classList.contains("is-open")) {
+    closeChat();
+  }
 });
-
-/* 7. Kazakhstan Telephone Autocorrector & Auto-masking */
 function formatKzPhone(value) {
   let digits = value.replace(/\D/g, "");
   
@@ -535,7 +541,7 @@ function openChat() {
   chatWidget.classList.add("is-open");
   chatWidget.setAttribute("aria-hidden", "false");
   chatToggle.setAttribute("aria-expanded", "true");
-  chatToggle.style.display = "none";
+  chatToggle.classList.add("is-hidden");
   
   if (chatMessages.children.length === 0) {
     initChatflow();
@@ -546,7 +552,7 @@ function closeChat() {
   chatWidget.classList.remove("is-open");
   chatWidget.setAttribute("aria-hidden", "true");
   chatToggle.setAttribute("aria-expanded", "false");
-  chatToggle.style.display = "flex";
+  chatToggle.classList.remove("is-hidden");
 }
 
 chatToggle.addEventListener("click", openChat);
@@ -638,14 +644,6 @@ function showChatPhoneWidget() {
 chatTextSend.addEventListener("click", handleChatTextSubmit);
 chatText.addEventListener("keydown", (e) => {
   if (e.key === "Enter") handleChatTextSubmit();
-});
-
-/* Keyboard Listener for closing Modals */
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape") {
-    closeLightbox();
-    closeChat();
-  }
 });
 
 /* 11. Simple Scroll Reveal Animation */

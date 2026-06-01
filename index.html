@@ -9,6 +9,14 @@
   <meta name="description" content="Производство премиальной мебели на заказ в Алматы от компании TUBA. Изготавливаем кухни, шкафы-купе, гардеробные и корпусную мебель по индивидуальным размерам с гарантией качества по договору.">
   <meta name="keywords" content="мебель на заказ алматы, кухни на заказ алматы, шкафы купе на заказ, гардеробные алматы, корпусная мебель алматы, изготовление мебели">
   <meta name="author" content="tuba.kz">
+  <meta name="theme-color" content="#fbf9f9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141616" media="(prefers-color-scheme: dark)">
+  
+  <link rel="canonical" href="https://tuba.kz/">
+  <link rel="alternate" hreflang="ru" href="https://tuba.kz/">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
   <!-- Open Graph / Facebook / WhatsApp -->
   <meta property="og:type" content="website">
@@ -16,6 +24,9 @@
   <meta property="og:title" content="TUBA — Корпусная мебель на заказ в Алматы">
   <meta property="og:description" content="Индивидуальное проектирование и изготовление кухонь, шкафов и гардеробных в Алматы. Скидка на 3D-проект. Расчет стоимости в WhatsApp.">
   <meta property="og:image" content="assets/kitchen 1_01.jpg">
+
+  <!-- Skip to main content (accessibility) -->
+  <a class="skip-link" href="#top">Перейти к содержимому</a>
 
   <!-- Favicon -->
   <link rel="icon" type="image/jpeg" href="assets/tuba-logo.jpg">
@@ -111,7 +122,7 @@
       <a class="mobile-nav-link" href="#process">Процесс</a>
       <a class="mobile-nav-link" href="#faq">FAQ</a>
       <a class="mobile-nav-link" href="#contact">Заявка</a>
-      <a class="btn btn-primary" href="#contact" style="margin-top: 20px;">Получить расчет в WhatsApp</a>
+      <a class="btn btn-primary mobile-cta-btn" href="#contact">Получить расчет в WhatsApp</a>
     </nav>
   </div>
 
@@ -128,7 +139,7 @@
           <p class="hero-lead">Работаем по Алматы и области. Фурнитура Blum, Hettich, Hafele. Срок изготовления от 10 рабочих дней.</p>
           <div class="hero-buttons">
             <a class="btn btn-primary" href="#contact">Получить расчет в WhatsApp</a>
-            <a class="btn btn-outline" href="#portfolio" style="color: #ffffff; border-color: #ffffff;">Посмотреть работы</a>
+            <a class="btn btn-outline" href="#portfolio">Посмотреть работы</a>
           </div>
           <ul class="hero-trust-strip">
             <li>Бесплатный замер</li>
@@ -215,7 +226,7 @@
     </section>
 
     <!-- Services Showcase -->
-    <section class="section-padding" id="services" style="background-color: var(--color-surface);">
+    <section class="section-padding section-services" id="services">
       <div class="container">
         <div class="section-header reveal-anim">
           <div>
@@ -288,12 +299,12 @@
         </div>
         
         <div class="portfolio-filter-bar reveal-anim">
-          <button class="filter-btn is-active" type="button" data-filter="all">Все проекты</button>
-          <button class="filter-btn" type="button" data-filter="kitchen">Кухни</button>
-          <button class="filter-btn" type="button" data-filter="wardrobe">Шкафы и гардеробы</button>
-          <button class="filter-btn" type="button" data-filter="hallway">Прихожие</button>
-          <button class="filter-btn" type="button" data-filter="wc">Санузлы</button>
-          <button class="filter-btn" type="button" data-filter="kids">Детские</button>
+          <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">Все проекты</button>
+          <button class="filter-btn" type="button" data-filter="kitchen" aria-pressed="false">Кухни</button>
+          <button class="filter-btn" type="button" data-filter="wardrobe" aria-pressed="false">Шкафы и гардеробы</button>
+          <button class="filter-btn" type="button" data-filter="hallway" aria-pressed="false">Прихожие</button>
+          <button class="filter-btn" type="button" data-filter="wc" aria-pressed="false">Санузлы</button>
+          <button class="filter-btn" type="button" data-filter="kids" aria-pressed="false">Детские</button>
         </div>
         
 <!-- portfolio-new-block.html content inserted -->
@@ -1535,7 +1546,7 @@
         <div class="process-grid reveal-anim">
           <div>
             <span class="section-label">Как мы работаем</span>
-            <h2 class="section-title" style="margin-bottom: 24px;">Вы заранее понимаете, что получите, сколько это стоит и когда будет готово</h2>
+            <h2 class="section-title process-section-title">Вы заранее понимаете, что получите, сколько это стоит и когда будет готово</h2>
             
             <div class="process-steps-list">
               <div class="process-step">
@@ -1586,7 +1597,7 @@
     <!-- Free Services / Perks Section -->
     <section class="section-padding perks-section" id="perks">
       <div class="container">
-        <div class="section-header reveal-anim" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="section-header section-header-centered reveal-anim">
           <div>
             <span class="section-label">Вызовите дизайнера</span>
             <h2 class="section-title">Получите бесплатно</h2>
@@ -1640,7 +1651,7 @@
     <!-- Progressive Form Calculator Section -->
     <section class="section-padding form-section" id="contact">
       <div class="container">
-        <div class="section-header reveal-anim" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="section-header section-header-centered reveal-anim">
           <div>
             <span class="section-label">Расчет стоимости</span>
             <h2 class="section-title">Заполните заявку — получите расчет в WhatsApp</h2>
@@ -1662,8 +1673,6 @@
               <span>Подскажем по материалам, срокам и фурнитуре</span>
             </div>
 
-            <div class="form-grid">
-            
             <div class="form-grid">
               <!-- Field: Type of Furniture (Chips & Select Sync) -->
               <div class="form-group">
@@ -1738,9 +1747,9 @@
               </div>
               
               <!-- Submit Button -->
-              <div style="text-align: center; margin-top: 16px;">
-                <button class="btn btn-primary" id="submitBtn" type="submit" style="width: 100%; max-width: 400px;">Получить расчет в WhatsApp</button>
-                <p class="form-note" id="formSuccess" style="font-size: 13px; margin-top: 12px; opacity: 0.8; display: none; color: var(--color-wood-accent); font-weight: 600;"></p>
+              <div class="form-submit-row">
+                <button class="btn btn-primary btn-fullwidth" id="submitBtn" type="submit">Получить расчет в WhatsApp</button>
+                <p class="form-note" id="formSuccess" style="display: none;"></p>
               </div>
             </div>
           </form>
@@ -1751,7 +1760,7 @@
     <!-- Partners / Brands Section -->
     <section class="section-padding partners-section" id="partners">
       <div class="container">
-        <div class="section-header reveal-anim" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="section-header section-header-centered reveal-anim">
           <div>
             <span class="section-label">Наши партнёры</span>
             <h2 class="section-title">Используем материалы ведущих брендов</h2>
@@ -1783,7 +1792,7 @@
     <!-- FAQ Section -->
     <section class="section-padding" id="faq">
       <div class="container">
-        <div class="section-header reveal-anim" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="section-header section-header-centered reveal-anim">
           <div>
             <span class="section-label">Вопросы и ответы</span>
             <h2 class="section-title">Часто задаваемые вопросы</h2>
@@ -1860,7 +1869,7 @@
     <!-- Trust Section -->
     <section class="section-padding trust-section" id="trust">
       <div class="container">
-        <div class="section-header reveal-anim" style="text-align: center; justify-content: center; align-items: center;">
+        <div class="section-header section-header-centered reveal-anim">
           <div>
             <span class="section-label">Доверие</span>
             <h2 class="section-title">Почему нам доверяют изготовление мебели на заказ</h2>
@@ -1920,7 +1929,7 @@
       <div class="footer-col">
         <h4 class="brand-name">TUBA</h4>
         <p class="footer-text">Корпусная и встроенная мебель на заказ в Алматы с 2011 года. Проектируем, изготавливаем и монтируем под ключ. Работаем по договору с гарантией.</p>
-        <a class="btn btn-primary" href="#contact" style="margin-top: 16px; display: inline-block;">Получить расчет</a>
+        <a class="btn btn-primary footer-cta-btn" href="#contact">Получить расчет</a>
       </div>
       
       <div class="footer-col">
@@ -1937,12 +1946,12 @@
       <div class="footer-col">
         <h5 class="footer-col-title">Контакты</h5>
         <div class="footer-links">
-          <span class="footer-text">📍 Алматы, ул. Бенберина, 18</span>
-          <a class="footer-link" href="tel:+77479043494">📞 +7 747 904 34 94</a>
+          <span class="footer-text"><span aria-hidden="true">📍 </span><span class="sr-only">Адрес: </span>Алматы, ул. Бенберина, 18</span>
+          <a class="footer-link" href="tel:+77479043494"><span aria-hidden="true">📞 </span><span class="sr-only">Телефон: </span>+7 747 904 34 94</a>
           <a class="footer-link" href="https://wa.me/77479043494" target="_blank" rel="noopener noreferrer">WhatsApp: +7 747 904 34 94</a>
-          <a class="footer-link" href="mailto:info@tuba.kz">✉️ info@tuba.kz</a>
-          <span class="footer-text">🕒 Пн–Сб: 09:00–19:00</span>
-          <span class="footer-text">📄 ИП на общих основаниях</span>
+          <a class="footer-link" href="mailto:info@tuba.kz"><span aria-hidden="true">✉️ </span><span class="sr-only">Email: </span>info@tuba.kz</a>
+          <span class="footer-text"><span aria-hidden="true">🕒 </span><span class="sr-only">Режим работы: </span>Пн–Сб: 09:00–19:00</span>
+          <span class="footer-text"><span aria-hidden="true">📄 </span><span class="sr-only">Реквизиты: </span>ИП на общих основаниях</span>
         </div>
       </div>
 
@@ -1958,8 +1967,8 @@
     <div class="container footer-bottom">
       <p>© 2026 TUBA.kz. Все права защищены.</p>
       <div class="footer-bottom-links">
-        <a class="footer-link" href="#">Политика конфиденциальности</a>
-        <a class="footer-link" href="#">Карта сайта</a>
+        <a class="footer-link" href="/privacy">Политика конфиденциальности</a>
+        <a class="footer-link" href="/sitemap">Карта сайта</a>
       </div>
     </div>
   </footer>
