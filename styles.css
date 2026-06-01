@@ -74,14 +74,24 @@ html {
 body {
   font-family: var(--font-body);
   background-color: var(--color-background);
-  background-image: url("assets/tuba-bg.png");
-  background-size: 200px;
-  background-repeat: repeat;
-  background-blend-mode: overlay;
   color: var(--color-on-background);
   line-height: 1.6;
   overflow-x: hidden;
   transition: background-color var(--transition-smooth), color var(--transition-smooth);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: url("assets/tuba-bg.png") center/cover no-repeat fixed;
+  opacity: 0.12;
+  pointer-events: none;
+}
+[data-theme="dark"] body::before {
+  filter: invert(1) hue-rotate(180deg);
+  opacity: 0.08;
 }
 
 a {
