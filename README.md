@@ -18,3 +18,14 @@
 ## Main product
 
 Главный продукт: `Murkin1980/furniture-orders-mvp`.
+
+## Обязательная проверка перед деплоем
+
+Перед каждым коммитом или деплоем публичного сайта запускать:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/check-google-ads-readiness.ps1
+node --check script.js
+```
+
+Правила Google Ads readiness и список утверждений, требующих подтверждения владельца, зафиксированы в `AGENTS.md`.

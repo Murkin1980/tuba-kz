@@ -1,0 +1,18 @@
+# One regex per line. Claims may be restored only after owner confirmation.
+скидк
+№\s*1
+номер\s+один
+самые\s+низкие
+лучшая\s+мебель
+до\s+10\s+лет
+15\s+лет
+с\s+2011
+бесплатн\w*\s+замер
+от\s+10\s+до\s+15
+от\s+18\s+до\s+25
+передов\w*\s+немецк
+\bBlum\b
+\bHettich\b
+\bEgger\b
+\bCleaf\b
+\bBoyard\b
