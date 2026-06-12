@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tuba.kz/sitemap.xml
+Sitemap: https://www.tuba.kz/sitemap.xml
