@@ -1,0 +1,21 @@
+id,language,query,platform,date_almt,observation,classification,top_domains_20261101,notes
+1,RU,"мебель на заказ Алматы",google_web,2026-11-01T18:45+05:00,NO in top5,NO,mastermebel.kz;kaspi.kz/satu;kz;saf-mebel.kz;mebelonline.kz;maximebel.kz,broad highly competitive 434 kaspi listings
+2,RU,"кухни на заказ Алматы",google_web,2026-11-01T18:47+05:00,NO in top5,NO,thefive.kz;kuxni;kuhnya.kz;mebelguru.kz;sanni.kz,top includes price pages from 120k-350k
+3,RU,"шкаф купе на заказ Алматы",google_web,2026-11-01T18:48+05:00,NO in top5,NO,bestkit.kz;mebelwood.kz;qupe.kz;kupe.globaltm.kz;asia-elite.kz,high competition
+4,RU,"гардеробная на заказ Алматы",google_web,2026-11-01T18:50+05:00,NO in top5,NO,furnita.kz;saf-mebel.kz;dom-kuhni.kz;cupe.kz;mebel-zakaz-almaty.kz,
+5,RU,"корпусная мебель Алматы",google_web,2026-11-01T18:51+05:00,NO in top5,NO,mebelguru.kz;mebelpodkluch.kz;amfactory.kz;piramidagroup.kz;bufet.kz,
+6,RU,"встроенная мебель Алматы",google_web,2026-11-01T18:53+05:00,NO in top5,NO,mebel-nazakaz.kz;pro-mr.kz;kaspi/satu,TUBA phrase exists but not ranking
+7,RU,"шкафы на заказ Алматы",google_web,2026-11-01T18:55+05:00,NO in top5,NO,thefive.kz/prixozhaya;kaspi;olx;kz,
+8,RU,"прихожая на заказ Алматы",google_web,2026-11-01T18:56+05:00,NO in top5,NO,thefive.kz/prixozhaya;mebelwood.kz;zoon.kz/kz;olx;kz,
+9,RU,"детская мебель на заказ Алматы",google_web,2026-11-01T18:57+05:00,NO in top5,NO,artvance.kz;mebelwood.kz;bufet.kz/kids-room;akniet.kz,
+10,RU,"мебель в ванную на заказ Алматы",google_web,2026-11-01T18:58+05:00,NO in top5,NO,eco-service.kz;bestkit.kz;mebel-vat.kz;olx/uslugi,TUBA has WC 1_01 case but not ranking
+11,RU,"TUBA мебель Алматы",google_web,2026-11-01T19:00+05:00,CITATION pos1,CITATION,www.tuba.kz (rich snippet address+phone),branded only success 1/20
+12,RU,"tuba.kz отзывы Алматы",google_web,2026-11-01T19:02+05:00,NO in top5,NO,2gis.kz/aktau Tuba ЖК/ресторан;zoon.kz/yandex Туба кондитерский,brand collision + no reviews yet honest
+13,RU,"шкафы до потолка Алматы",google_web,2026-11-01T19:04+05:00,NO in top5,NO,thefive.kz/prixozhaya/shkafyi-kupe-v-prixozhuyu;kaspi;olx;kz,
+14,RU,"кухни с островом Алматы",google_web,2026-11-01T19:05+05:00,NO in top5,NO,thefive.kz;kuxni;mebelguru,generic - TUBA has kitchen 1_01 island case
+15,KK,"Алматы жиһаз тапсырыс",google_web,2026-11-01T19:06+05:00,NO in top5,NO,delivery.yandex.kz;zeta.kz;2gis Mia mebel;profimarket,kz content missing on tuba.kz
+16,KK,"Алматы ас үй жиһазы тапсырыс",google_web,2026-11-01T19:07+05:00,NO in top5,NO,yandex delivery;satu.kz/oe.kz;olx.kz/kk,no kz page to match
+17,KK,"Алматы гардероб тапсырыс",google_web,2026-11-01T19:08+05:00,NO in top5,NO,RU pages dominate;mebel-nazakaz etc,kz inventory absent
+18,KK,"Алматы шкаф тапсырыспен",google_web,2026-11-01T19:09+05:00,NO in top5,NO,RU pages dominate,
+19,KK,"Алматы жиһаз жасау",google_web,2026-11-01T19:09+05:00,NO in top5,NO,profimarket Almacity;2gis;mebelguru,
+20,KK,"Алматы тапсырыс жиһаз шеберханасы",google_web,2026-11-01T19:10+05:00,NO in top5,NO,amfactory.kz;mebelguru;mix,
